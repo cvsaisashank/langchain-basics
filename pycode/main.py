@@ -15,12 +15,13 @@ parser.add_argument("--language", default="python")
 # Get the args passed from command line
 args = parser.parse_args()
 
+# Below is a completion model.
 llm = OpenAI()
 
-# Below is a keyword argumnet in python
+# Below is a keyword argument in python
 code_prompt = PromptTemplate(
-    template="Write a very short {language} function that will {task}",
     input_variables=["language", "task"],
+    template="Write a very short {language} function that will {task}",
 )
 
 unit_test_prompt = PromptTemplate(
