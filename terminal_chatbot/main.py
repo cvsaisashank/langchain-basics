@@ -51,5 +51,6 @@ chain = LLMChain(llm=chat, prompt=prompt, memory=memory2, verbose=True)
 # Run an infinite loop to ask follow up question in the terminal.
 while True:
     content = input(">>")
+    # {"content": content} is input to chain --> and then to prompt('ChatPromptTemplate')
     result = chain({"content": content})
     print(result["text"])
