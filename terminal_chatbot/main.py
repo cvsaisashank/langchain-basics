@@ -38,6 +38,7 @@ memory2 = ConversationSummaryMemory(
 
 # use this class to create a Prompt with all the history of messages and the latest human asked question.
 prompt = ChatPromptTemplate(
+    # 'content': this is input to the chain
     input_variables=["content", "messages_history"],
     messages=[
         MessagesPlaceholder(variable_name="messages_history"),
