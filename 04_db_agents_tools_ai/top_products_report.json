@@ -1,0 +1,22 @@
+[
+    {
+        "product_name": "Unbranded Pizza",
+        "total_sold": 62
+    },
+    {
+        "product_name": "Rubber Mouse",
+        "total_sold": 55
+    },
+    {
+        "product_name": "Ball",
+        "total_sold": 55
+    },
+    {
+        "product_name": "Refined Chips",
+        "total_sold": 53
+    },
+    {
+        "product_name": "Generic Ball",
+        "total_sold": 52
+    }
+]
