@@ -33,10 +33,10 @@ unit_test_prompt = PromptTemplate(
     template="Write a  unit test for the following {language} code:\n {code}",
 )
 
-# Create a Chain
+# Create a new Chain
 code_chain = LLMChain(llm=llm, prompt=code_prompt, output_key="code", verbose=True)
 
-# Create a Chain
+# Create a new Chain
 unit_test_chain = LLMChain(
     llm=llm, prompt=unit_test_prompt, output_key="test", verbose=True
 )

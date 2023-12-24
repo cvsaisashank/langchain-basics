@@ -22,11 +22,11 @@ chat = ChatOpenAI()
 
 # memory_key :- `Memory` adds a new key to the dictionary on top of the input's that are coming in.
 # return_messages :- It will intelligently convert the strings to intelligent objects like `HumanMessage("What is 1 + 1?", AIMessage("2")`)
-memory1 = ConversationBufferMemory(
-    memory_key="messages_history",
-    return_messages=True,
-    chat_memory=FileChatMessageHistory("terminal_chatbot/messages.json"),
-)
+# memory1 = ConversationBufferMemory(
+#     memory_key="messages_history",
+#     return_messages=True,
+#     chat_memory=FileChatMessageHistory("terminal_chatbot/messages.json"),
+# )
 
 # use either memory1 or memory2. memory2 saves cost by summarizing the prompt.
 memory2 = ConversationSummaryMemory(
@@ -38,7 +38,7 @@ memory2 = ConversationSummaryMemory(
 
 # use this class to create a Prompt with all the history of messages and the latest human asked question.
 prompt = ChatPromptTemplate(
-    # 'content': this is input to the chain
+    # 'content' variable : this is input to the chain
     input_variables=["content", "messages_history"],
     messages=[
         MessagesPlaceholder(variable_name="messages_history"),
