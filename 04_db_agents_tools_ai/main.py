@@ -71,6 +71,8 @@ agent_executor = AgentExecutor(
     # verbose=True
 )
 
+# RUN Any one of the below agent executor as ther eis a rate limitter on my free plan
+
 # agent_executor("How many users are in the database?")
 # agent_executor("How many users have provided a shipping address ?")
 agent_executor(
