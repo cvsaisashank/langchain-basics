@@ -3,6 +3,8 @@ import argparse
 from dotenv import load_dotenv
 from langchain.chains import LLMChain, SequentialChain
 from langchain.llms import OpenAI
+
+# from langchain.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
 
 # Get the open_api_key from .env file
@@ -19,9 +21,9 @@ parser.add_argument("--language", default="python")
 args = parser.parse_args()
 
 # Below is a completion model but not conversational model.
-llm = OpenAI(verbose=True)
+llm = OpenAI(model_name="gpt-3.5-turbo-instruct")
 
-# create a Prompt
+# create a Prompt 
 code_prompt = PromptTemplate(
     input_variables=["language", "task"],
     template="Write a very short {language} function that will {task}",
@@ -54,5 +56,5 @@ result = chain({"language": args.language, "task": args.task})
 print(">>>>> code")
 print(result["code"])
 
-print(">>>>> test")
+print(">>>>> unit test case for the genrated code")
 print(result["test"])

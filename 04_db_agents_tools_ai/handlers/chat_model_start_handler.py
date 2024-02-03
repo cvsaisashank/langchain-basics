@@ -2,7 +2,7 @@ from langchain.callbacks.base import BaseCallbackHandler
 from pyboxen import boxen
 
 
-# instaed of manually calling everythime like print(boxen("TEST HERE!!", title="Human", color="yellow")), we created a funciton.
+# instaed of manually calling everytime like print(boxen("TEST HERE!!", title="Human", color="yellow")), we created a funciton.
 def boxen_print(*args, **kwargs):
     print(boxen(*args, **kwargs))
 

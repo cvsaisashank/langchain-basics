@@ -31,7 +31,6 @@ db = Chroma(embedding_function=embeddings, persist_directory="emb")
 # Below is our custom retriever which will remove the duplicate documents unlike `db.as_retriever()` which doesn not do.
 retriever = RedundantFilterRetriever(embeddings=embeddings, chroma=db)
 
-
 # RetrievalQA Chain:
 chain = RetrievalQA.from_chain_type(llm=chat, retriever=retriever, chain_type="stuff")
 

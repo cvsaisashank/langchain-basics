@@ -40,7 +40,7 @@ prompt = ChatPromptTemplate(
                 "For JSON report, use the 'write_json_report' function"
             )
         ),
-        # we place the memory here before a brand new human inpt comes in.
+        # we place the memory here before a brand new human input comes in.
         MessagesPlaceholder(variable_name="chat_history"),
         HumanMessagePromptTemplate.from_template(
             "{input}"
